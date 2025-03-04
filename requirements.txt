@@ -1,0 +1,13 @@
+pandas
+numpy
+beautifulsoup4
+requests
+selenium
+undetected-chromedriver
+faiss-cpu
+openai
+langchain
+tiktoken
+transformers
+torch
+sentence-transformers
