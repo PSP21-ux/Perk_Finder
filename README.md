@@ -7,18 +7,19 @@ This project is designed to scrape credit card details from **SBI** and **Axis B
 ## 📂 Project Structure
 
 ```
-├── axis_scraper.py        # Web scraper for Axis Bank credit cards
-├── sbi_scraper.py         # Web scraper for SBI credit cards
-├── data_preprocessing.py  # Merges & cleans CSV files
-├── Ai.py                  # LLM + RAG for querying credit card data
-├── sbi_credit_cards.csv   # Scraped data from SBI
-├── axis_credit_cards.csv  # Scraped data from Axis
-├── combined_data.csv      # Merged and cleaned dataset
-├── requirements.txt       # Dependencies
-└── README.md              # Project documentation
+│── scrapper/
+│   ├── AXIS_credit_card.py
+│   ├── SBI_credit_card.py
+│   ├── axis_credit_cards.csv
+│   ├── sbi_credit_cards.csv
+│── data_preprocessing/
+│   ├── Data_preprocessing.py
+│   ├── combined_credit_cards
+│── LLM+RAG Model.ipynb
+│── requirements.txt
+│── README.md
 ```
 
----
 ## 🛠️ Setup Instructions
 
 ### 1️⃣ Install Dependencies
@@ -30,22 +31,22 @@ pip install -r requirements.txt
 ### 2️⃣ Run Web Scrapers
 Scrape the data from SBI and Axis Bank websites by running:
 ```bash
-python sbi_scraper.py
-python axis_scraper.py
+python scrapper/SBI_credit_card.py
+python scrapper/AXIS_credit_card.py
 ```
-This will generate `sbi_credit_cards.csv` and `axis_credit_cards.csv`.
+This will generate `sbi_credit_cards.csv` and `axis_credit_cards.csv` inside the `scrapper/` folder.
 
 ### 3️⃣ Preprocess Data
 Merge and clean the scraped CSV files:
 ```bash
-python data_preprocessing.py
+python data_preprocessing/Data_preprocessing.py
 ```
-This will generate `combined_data.csv`.
+This will generate `combined_credit_cards` inside `data_preprocessing/`.
 
 ### 4️⃣ Run AI Query System
 Start the LLM + RAG-based credit card recommendation system:
 ```bash
-python Ai.py
+python LLM+RAG Model.ipynb
 ```
 You can now enter a query like:
 ```
@@ -61,7 +62,7 @@ Which Axis Bank credit card is best for shopping?
 4. **LLM (Mistral-7B) + RAG**: Generates responses based on retrieved documents.
 
 ---
-## 📌 Example Query
+## 📀 Example Query
 
 **Input:**
 ```
@@ -83,7 +84,7 @@ Based on the available data, the best Axis Bank credit cards for shopping are:
 - Deploy as an API or chatbot for real-time queries.
 
 ---
-## 📜 License
+## 🐝 License
 This project is open-source. Feel free to contribute!
 
 ---
